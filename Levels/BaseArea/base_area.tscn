@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://crux6wau0nb12"]
+
+[ext_resource type="Script" path="res://Levels/BaseArea/base_area.gd" id="1_f0hxu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ce23v"]
+font_size = 32
+
+[node name="BaseArea" type="Node2D"]
+script = ExtResource("1_f0hxu")
+
+[node name="Image" type="Sprite2D" parent="."]
+position = Vector2(576.5, 324)
+scale = Vector2(0.886923, 0.819216)
+region_rect = Rect2(0, 75.0884, 1299.79, 791.747)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="Title" type="Label" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "Area Title"
+label_settings = SubResource("LabelSettings_ce23v")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="PreviousButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "Previous Scene"
+
+[node name="NextButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Next Scene"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="BackButton" type="Button" parent="VBoxContainer/CenterContainer"]
+layout_mode = 2
+text = "Back to Main Scene"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/PreviousButton" to="." method="_on_previous_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/CenterContainer/BackButton" to="." method="_on_back_button_pressed"]

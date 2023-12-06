@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://wckj5wfspkl8"]
+
+[ext_resource type="PackedScene" uid="uid://cm3jd1w063vb7" path="res://Levels/BaseScene/base_scene.tscn" id="1_apsur"]
+
+[node name="Scene1" instance=ExtResource("1_apsur")]
+
+[editable path="OverviewArea"]
+[editable path="Area1"]
+[editable path="Area2"]
+[editable path="Area3"]
+[editable path="Area4"]

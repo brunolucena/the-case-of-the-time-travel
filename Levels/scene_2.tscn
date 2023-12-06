@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://dk0kihrj7npwh"]
+
+[ext_resource type="PackedScene" uid="uid://cm3jd1w063vb7" path="res://Levels/BaseScene/base_scene.tscn" id="1_8ewdc"]
+
+[node name="Scene1" instance=ExtResource("1_8ewdc")]
+
+[node name="Polygon2D" parent="OverviewArea/ClickableAreas/Area1" index="0"]
+polygon = PackedVector2Array(647, 121, 774, 288, 1300, 268, 1360, 142)
+
+[node name="CollisionPolygon2D" parent="OverviewArea/ClickableAreas/Area1/Polygon2D/Area2D" index="0"]
+polygon = PackedVector2Array(-116, 185, 415, 166, 471, 38, -244, 17)
+
+[node name="AreaName" parent="OverviewArea/ClickableAreas/Area1" index="1"]
+offset_left = 467.0
+offset_top = 148.0
+offset_right = 592.0
+offset_bottom = 196.0
+text = "Area 2.1"
+
+[node name="AreaName" parent="OverviewArea/ClickableAreas/Area2" index="1"]
+text = "Area 2.2"
+
+[node name="AreaName" parent="OverviewArea/ClickableAreas/Area3" index="1"]
+text = "Area 2.3"
+
+[node name="AreaName" parent="OverviewArea/ClickableAreas/Area4" index="1"]
+text = "Area 2.4"
+
+[node name="Title" parent="OverviewArea/MarginContainer" index="0"]
+text = "Scene 2"
+
+[node name="Title" parent="Area1/VBoxContainer/MarginContainer" index="0"]
+text = "Area 2.1"
+
+[node name="Title" parent="Area2/VBoxContainer/MarginContainer" index="0"]
+text = "Area 2.2"
+
+[node name="Title" parent="Area3/VBoxContainer/MarginContainer" index="0"]
+text = "Area 2.3"
+
+[node name="Title" parent="Area4/VBoxContainer/MarginContainer" index="0"]
+text = "Area 2.4"
+
+[editable path="OverviewArea"]
+[editable path="Area1"]
+[editable path="Area2"]
+[editable path="Area3"]
+[editable path="Area4"]

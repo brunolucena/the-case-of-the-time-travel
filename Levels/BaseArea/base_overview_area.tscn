@@ -1,0 +1,132 @@
+[gd_scene load_steps=5 format=3 uid="uid://buqjs18jlfvjn"]
+
+[ext_resource type="Script" path="res://Levels/BaseArea/base_overview_area.gd" id="1_utixc"]
+[ext_resource type="Texture2D" uid="uid://x3skim36n0kl" path="res://Levels/BaseArea/images/overview_area.png" id="2_tdnrx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_k8wox"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_ce23v"]
+font_size = 32
+
+[node name="OverviewArea" type="Node2D"]
+script = ExtResource("1_utixc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576.5, 324)
+scale = Vector2(1.56658, 1.31976)
+texture = ExtResource("2_tdnrx")
+metadata/_edit_lock_ = true
+
+[node name="ClickableAreas" type="Node2D" parent="."]
+
+[node name="Area1" type="Node2D" parent="ClickableAreas"]
+
+[node name="Polygon2D" type="Polygon2D" parent="ClickableAreas/Area1"]
+modulate = Color(1, 1, 1, 0.423529)
+position = Vector2(-478, -28)
+polygon = PackedVector2Array(540, 30, 744, 202, 1328, 208, 1573, 29)
+
+[node name="Area2D" type="Area2D" parent="ClickableAreas/Area1/Polygon2D"]
+position = Vector2(1031, 105)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ClickableAreas/Area1/Polygon2D/Area2D"]
+position = Vector2(-141, 0)
+polygon = PackedVector2Array(-144, 97, 449, 100, 687, -76, -350, -75)
+
+[node name="AreaName" type="Label" parent="ClickableAreas/Area1"]
+offset_left = 519.0
+offset_top = 77.0
+offset_right = 617.0
+offset_bottom = 125.0
+text = "Area 1"
+label_settings = SubResource("LabelSettings_k8wox")
+
+[node name="Area2" type="Node2D" parent="ClickableAreas"]
+
+[node name="Polygon2D" type="Polygon2D" parent="ClickableAreas/Area2"]
+modulate = Color(1, 1, 1, 0.423529)
+position = Vector2(-881, -19)
+polygon = PackedVector2Array(882, 64, 878, 638, 1072, 554, 1067, 231)
+
+[node name="Area2D" type="Area2D" parent="ClickableAreas/Area2/Polygon2D"]
+position = Vector2(1031, 105)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ClickableAreas/Area2/Polygon2D/Area2D"]
+polygon = PackedVector2Array(-153, -37, -154, 534, 44, 453, 35, 126)
+
+[node name="AreaName" type="Label" parent="ClickableAreas/Area2"]
+offset_left = 52.0
+offset_top = 334.0
+offset_right = 150.0
+offset_bottom = 382.0
+text = "Area 2"
+label_settings = SubResource("LabelSettings_k8wox")
+
+[node name="Area3" type="Node2D" parent="ClickableAreas"]
+
+[node name="Polygon2D" type="Polygon2D" parent="ClickableAreas/Area3"]
+modulate = Color(1, 1, 1, 0.423529)
+polygon = PackedVector2Array(83, 649, 201, 546, 878, 547, 964, 654)
+
+[node name="Area2D" type="Area2D" parent="ClickableAreas/Area3/Polygon2D"]
+position = Vector2(1031, 105)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ClickableAreas/Area3/Polygon2D/Area2D"]
+polygon = PackedVector2Array(-948, 545, -68, 549, -149, 445, -830, 441)
+
+[node name="AreaName" type="Label" parent="ClickableAreas/Area3"]
+offset_left = 497.0
+offset_top = 583.0
+offset_right = 595.0
+offset_bottom = 631.0
+text = "Area 3"
+label_settings = SubResource("LabelSettings_k8wox")
+
+[node name="Area4" type="Node2D" parent="ClickableAreas"]
+
+[node name="Polygon2D" type="Polygon2D" parent="ClickableAreas/Area4"]
+modulate = Color(1, 1, 1, 0.423529)
+polygon = PackedVector2Array(1155, 650, 896, 555, 897, 177, 1153, 6)
+
+[node name="Area2D" type="Area2D" parent="ClickableAreas/Area4/Polygon2D"]
+position = Vector2(1031, 105)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ClickableAreas/Area4/Polygon2D/Area2D"]
+polygon = PackedVector2Array(-137, 453, 125, 545, 124, -101, -132, 69)
+
+[node name="AreaName" type="Label" parent="ClickableAreas/Area4"]
+offset_left = 984.0
+offset_top = 342.0
+offset_right = 1082.0
+offset_bottom = 390.0
+text = "Area 4"
+label_settings = SubResource("LabelSettings_k8wox")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 330.0
+offset_right = 1152.0
+offset_bottom = 378.0
+grow_horizontal = 2
+
+[node name="Title" type="Label" parent="MarginContainer"]
+layout_mode = 2
+text = "Main Scene"
+label_settings = SubResource("LabelSettings_ce23v")
+horizontal_alignment = 1
+
+[connection signal="input_event" from="ClickableAreas/Area1/Polygon2D/Area2D" to="." method="_on_area_input_event" binds= [1]]
+[connection signal="mouse_entered" from="ClickableAreas/Area1/Polygon2D/Area2D" to="." method="_on_area_mouse_entered" binds= [1]]
+[connection signal="mouse_exited" from="ClickableAreas/Area1/Polygon2D/Area2D" to="." method="_on_area_mouse_exited" binds= [1]]
+[connection signal="input_event" from="ClickableAreas/Area2/Polygon2D/Area2D" to="." method="_on_area_input_event" binds= [2]]
+[connection signal="mouse_entered" from="ClickableAreas/Area2/Polygon2D/Area2D" to="." method="_on_area_mouse_entered" binds= [2]]
+[connection signal="mouse_exited" from="ClickableAreas/Area2/Polygon2D/Area2D" to="." method="_on_area_mouse_exited" binds= [2]]
+[connection signal="input_event" from="ClickableAreas/Area3/Polygon2D/Area2D" to="." method="_on_area_input_event" binds= [3]]
+[connection signal="mouse_entered" from="ClickableAreas/Area3/Polygon2D/Area2D" to="." method="_on_area_mouse_entered" binds= [3]]
+[connection signal="mouse_exited" from="ClickableAreas/Area3/Polygon2D/Area2D" to="." method="_on_area_mouse_exited" binds= [3]]
+[connection signal="input_event" from="ClickableAreas/Area4/Polygon2D/Area2D" to="." method="_on_area_input_event" binds= [4]]
+[connection signal="mouse_entered" from="ClickableAreas/Area4/Polygon2D/Area2D" to="." method="_on_area_mouse_entered" binds= [4]]
+[connection signal="mouse_exited" from="ClickableAreas/Area4/Polygon2D/Area2D" to="." method="_on_area_mouse_exited" binds= [4]]
