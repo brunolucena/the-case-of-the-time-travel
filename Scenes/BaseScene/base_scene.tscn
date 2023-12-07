@@ -1,0 +1,131 @@
+[gd_scene load_steps=9 format=3 uid="uid://cm3jd1w063vb7"]
+
+[ext_resource type="Script" path="res://Scenes/BaseScene/base_scene.gd" id="1_fspxa"]
+[ext_resource type="PackedScene" uid="uid://buqjs18jlfvjn" path="res://Scenes/BaseScene/OverviewArea/overview_area.tscn" id="2_2e7rn"]
+[ext_resource type="PackedScene" uid="uid://crux6wau0nb12" path="res://Scenes/BaseScene/Area/area.tscn" id="3_upd5g"]
+[ext_resource type="Texture2D" uid="uid://clqc6ofwyl47o" path="res://Scenes/BaseScene/Area/images/area_1.jpg" id="4_84xu8"]
+[ext_resource type="PackedScene" uid="uid://bvqww8686e8x5" path="res://Scenes/Action/action.tscn" id="5_fn6tx"]
+[ext_resource type="Texture2D" uid="uid://bkiorvvs2sysd" path="res://Scenes/BaseScene/Area/images/area_3.png" id="6_jtlja"]
+[ext_resource type="Texture2D" uid="uid://oekii5oxkpvo" path="res://Scenes/BaseScene/Area/images/area_4.jpg" id="7_eqvwn"]
+[ext_resource type="PackedScene" uid="uid://mj3v7k667e2w" path="res://Scenes/ActionsList/actions_list.tscn" id="8_ir74u"]
+
+[node name="BaseScene" type="Node2D"]
+script = ExtResource("1_fspxa")
+
+[node name="OverviewArea" parent="." instance=ExtResource("2_2e7rn")]
+
+[node name="Title" parent="OverviewArea/MarginContainer" index="0"]
+text = "Initial Scene 1"
+
+[node name="Area1" parent="." instance=ExtResource("3_upd5g")]
+visible = false
+
+[node name="Image" parent="Area1" index="0"]
+texture = ExtResource("4_84xu8")
+region_enabled = true
+
+[node name="Title" parent="Area1/VBoxContainer/MarginContainer" index="0"]
+text = "Area 1"
+
+[node name="ActionA" parent="Area1" instance=ExtResource("5_fn6tx")]
+position = Vector2(675, 514)
+action_id = "A"
+action_description = "(A) Break Glass"
+
+[node name="TextContainer" parent="Area1/ActionA" index="2"]
+offset_left = -71.0
+offset_right = 77.0
+
+[node name="Text" parent="Area1/ActionA/TextContainer/MarginContainer" index="0"]
+text = "(A) Break Glass"
+
+[node name="ActionB" parent="Area1" instance=ExtResource("5_fn6tx")]
+position = Vector2(429, 196)
+action_id = "B"
+action_description = "(B) Do Something"
+
+[node name="TextContainer" parent="Area1/ActionB" index="2"]
+offset_left = -83.0
+offset_right = 83.0
+
+[node name="Text" parent="Area1/ActionB/TextContainer/MarginContainer" index="0"]
+text = "(B) Do Something"
+
+[node name="Area2" parent="." instance=ExtResource("3_upd5g")]
+visible = false
+
+[node name="Title" parent="Area2/VBoxContainer/MarginContainer" index="0"]
+text = "Area 2"
+
+[node name="ActionC" parent="Area2" instance=ExtResource("5_fn6tx")]
+position = Vector2(711, 376)
+action_id = "C"
+action_description = "(C) Drink this"
+
+[node name="TextContainer" parent="Area2/ActionC" index="2"]
+offset_left = -66.0
+offset_right = 66.0
+
+[node name="Text" parent="Area2/ActionC/TextContainer/MarginContainer" index="0"]
+text = "(C) Drink this"
+
+[node name="Area3" parent="." instance=ExtResource("3_upd5g")]
+visible = false
+
+[node name="Image" parent="Area3" index="0"]
+scale = Vector2(1.40488, 1.2)
+texture = ExtResource("6_jtlja")
+
+[node name="Title" parent="Area3/VBoxContainer/MarginContainer" index="0"]
+text = "Area 3"
+
+[node name="ActionD" parent="Area3" instance=ExtResource("5_fn6tx")]
+position = Vector2(349, 355)
+action_id = "D"
+action_description = "(D) Some action"
+
+[node name="TextContainer" parent="Area3/ActionD" index="2"]
+offset_left = -78.0
+offset_right = 76.0
+
+[node name="Text" parent="Area3/ActionD/TextContainer/MarginContainer" index="0"]
+text = "(D) Some action"
+
+[node name="Area4" parent="." instance=ExtResource("3_upd5g")]
+visible = false
+
+[node name="Image" parent="Area4" index="0"]
+scale = Vector2(1.125, 0.945985)
+texture = ExtResource("7_eqvwn")
+
+[node name="Title" parent="Area4/VBoxContainer/MarginContainer" index="0"]
+text = "Area 4"
+
+[node name="ActionE" parent="Area4" instance=ExtResource("5_fn6tx")]
+position = Vector2(349, 355)
+action_id = "E"
+action_description = "(E) Some action"
+
+[node name="TextContainer" parent="Area4/ActionE" index="2"]
+offset_left = -77.0
+offset_right = 74.0
+
+[node name="Text" parent="Area4/ActionE/TextContainer/MarginContainer" index="0"]
+text = "(E) Some action"
+
+[node name="ActionsList" parent="." instance=ExtResource("8_ir74u")]
+
+[connection signal="area_changed" from="OverviewArea" to="." method="_on_overview_area_area_changed"]
+[connection signal="pressed" from="ActionsList/PanelContainer/MarginContainer/VBoxContainer/ConfirmButton" to="." method="_on_confirm_button_pressed"]
+
+[editable path="OverviewArea"]
+[editable path="Area1"]
+[editable path="Area1/ActionA"]
+[editable path="Area1/ActionB"]
+[editable path="Area2"]
+[editable path="Area2/ActionC"]
+[editable path="Area3"]
+[editable path="Area3/ActionD"]
+[editable path="Area4"]
+[editable path="Area4/ActionE"]
+[editable path="ActionsList"]

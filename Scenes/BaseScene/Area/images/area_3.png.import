@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x3skim36n0kl"
-path="res://.godot/imported/overview_area.png-3eb796f7cc476c61eb04d6dc1808de43.ctex"
+uid="uid://bkiorvvs2sysd"
+path="res://.godot/imported/area_3.png-311fcc5d13ff4bfa132be5e27db0d45a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/BaseArea/images/overview_area.png"
-dest_files=["res://.godot/imported/overview_area.png-3eb796f7cc476c61eb04d6dc1808de43.ctex"]
+source_file="res://Scenes/BaseScene/Area/images/area_3.png"
+dest_files=["res://.godot/imported/area_3.png-311fcc5d13ff4bfa132be5e27db0d45a.ctex"]
 
 [params]
 

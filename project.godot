@@ -11,12 +11,21 @@ config_version=5
 [application]
 
 config/name="The Case Of The Time Travel"
+run/main_scene="res://Scenes/MainMenu/main_menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+CurrentLoop="*res://Autoloads/current_loop.tscn"
 
 [display]
 
 window/stretch/mode="viewport"
+
+[filesystem]
+
+import/blender/enabled=false
 
 [input]
 

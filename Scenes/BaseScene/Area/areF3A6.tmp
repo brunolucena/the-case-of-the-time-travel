@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://crux6wau0nb12"]
+
+[ext_resource type="Script" path="res://Levels/BaseScene/Area/area.gd" id="1_5538x"]
+[ext_resource type="Texture2D" uid="uid://c4ks1fn5sycgk" path="res://Levels/BaseScene/Area/images/area_2.jpg" id="2_al8rk"]
+[ext_resource type="PackedScene" uid="uid://bvqww8686e8x5" path="res://Levels/Action/action.tscn" id="3_sqmdh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ce23v"]
+font_size = 32
+
+[node name="Area" type="Node2D"]
+script = ExtResource("1_5538x")
+
+[node name="Image" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(1.125, 0.84375)
+texture = ExtResource("2_al8rk")
+region_rect = Rect2(0, 75.0884, 1299.79, 791.747)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="Title" type="Label" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "Area Title"
+label_settings = SubResource("LabelSettings_ce23v")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="PreviousButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "Previous Scene"
+
+[node name="NextButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Next Scene"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="BackButton" type="Button" parent="VBoxContainer/CenterContainer"]
+layout_mode = 2
+text = "Back to Main Scene"
+
+[node name="Action" parent="." instance=ExtResource("3_sqmdh")]
+position = Vector2(712, 384)
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/PreviousButton" to="." method="_on_previous_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/CenterContainer/BackButton" to="." method="_on_back_button_pressed"]

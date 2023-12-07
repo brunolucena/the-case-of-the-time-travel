@@ -1,22 +1,37 @@
 [gd_scene load_steps=5 format=3 uid="uid://buqjs18jlfvjn"]
 
-[ext_resource type="Script" path="res://Levels/BaseArea/base_overview_area.gd" id="1_utixc"]
-[ext_resource type="Texture2D" uid="uid://x3skim36n0kl" path="res://Levels/BaseArea/images/overview_area.png" id="2_tdnrx"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_k8wox"]
-font_size = 32
+[ext_resource type="Script" path="res://Scenes/BaseScene/OverviewArea/overview_area.gd" id="1_bcc5v"]
+[ext_resource type="Texture2D" uid="uid://x3skim36n0kl" path="res://Scenes/BaseScene/OverviewArea/images/overview_area.png" id="2_ijf23"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ce23v"]
 font_size = 32
 
+[sub_resource type="LabelSettings" id="LabelSettings_k8wox"]
+font_size = 32
+
 [node name="OverviewArea" type="Node2D"]
-script = ExtResource("1_utixc")
+script = ExtResource("1_bcc5v")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(576.5, 324)
 scale = Vector2(1.56658, 1.31976)
-texture = ExtResource("2_tdnrx")
+texture = ExtResource("2_ijf23")
 metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 330.0
+offset_right = 1152.0
+offset_bottom = 378.0
+grow_horizontal = 2
+
+[node name="Title" type="Label" parent="MarginContainer"]
+layout_mode = 2
+text = "Main Scene"
+label_settings = SubResource("LabelSettings_ce23v")
+horizontal_alignment = 1
 
 [node name="ClickableAreas" type="Node2D" parent="."]
 
@@ -102,21 +117,6 @@ offset_right = 1082.0
 offset_bottom = 390.0
 text = "Area 4"
 label_settings = SubResource("LabelSettings_k8wox")
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_top = 330.0
-offset_right = 1152.0
-offset_bottom = 378.0
-grow_horizontal = 2
-
-[node name="Title" type="Label" parent="MarginContainer"]
-layout_mode = 2
-text = "Main Scene"
-label_settings = SubResource("LabelSettings_ce23v")
-horizontal_alignment = 1
 
 [connection signal="input_event" from="ClickableAreas/Area1/Polygon2D/Area2D" to="." method="_on_area_input_event" binds= [1]]
 [connection signal="mouse_entered" from="ClickableAreas/Area1/Polygon2D/Area2D" to="." method="_on_area_mouse_entered" binds= [1]]

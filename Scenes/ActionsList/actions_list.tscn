@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://mj3v7k667e2w"]
+
+[ext_resource type="Script" path="res://Scenes/ActionsList/actions_list.gd" id="1_cx02u"]
+
+[node name="ActionsList" type="Node2D"]
+script = ExtResource("1_cx02u")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Selected Actions"
+
+[node name="Items" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ConfirmButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+disabled = true
+text = "CONFIRM"
