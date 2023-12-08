@@ -1,0 +1,88 @@
+# LANGUAGE translation for The Case Of The Time Travel for the following files:
+# res://Scenes/scene_1.tscn
+# res://Scenes/MainMenu/main_menu.tscn
+# res://Scenes/Scene2/scene_2_ABC.tscn
+#
+# Bruno Lucena <bruno.lucenac@gmail.com>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: The Case Of The Time Travel\n"
+"Report-Msgid-Bugs-To: Bruno Lucena <bruno.lucenac@gmail.com>\n"
+"POT-Creation-Date: 2023-12-08 20:36+0300\n"
+"PO-Revision-Date: 2023-12-08 20:37+0300\n"
+"Last-Translator: Bruno Lucena\n"
+"Language-Team: none\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: Scenes/MainMenu/main_menu.tscn
+msgid "The Case of The Time Travel"
+msgstr "The Case of The Time Travel"
+
+#: Scenes/MainMenu/main_menu.tscn
+msgid "New Game"
+msgstr "Novo Jogo"
+
+#: Scenes/Endings/ending_test.tscn
+msgid "Ending"
+msgstr "Final"
+
+#: Scenes/BaseScene/OverviewArea/overview_area.tscn
+msgid "Main Scene"
+msgstr "Cena Principal"
+
+#: Scenes/BaseScene/OverviewArea/overview_area.tscn
+msgid "Area 1"
+msgstr "Área 1"
+
+#: Scenes/BaseScene/OverviewArea/overview_area.tscn
+msgid "Area 2"
+msgstr "Área 2"
+
+#: Scenes/BaseScene/OverviewArea/overview_area.tscn
+msgid "Area 3"
+msgstr "Área 3"
+
+#: Scenes/BaseScene/OverviewArea/overview_area.tscn
+msgid "Area 4"
+msgstr "Área 4"
+
+#: Scenes/BaseScene/Area/area.tscn
+msgid "Area Title"
+msgstr "Título da Área"
+
+#: Scenes/BaseScene/Area/area.tscn
+msgid "Previous Scene"
+msgstr "Cena Anterior"
+
+#: Scenes/BaseScene/Area/area.tscn
+msgid "Next Scene"
+msgstr "Próxima Cena"
+
+#: Scenes/BaseScene/Area/area.tscn
+msgid "Back to Main Scene"
+msgstr "Voltar Para Cena Principal"
+
+#: Scenes/ActionsList/actions_list.tscn
+msgid "Selected Actions"
+msgstr "Ações Selecionadas"
+
+#: Scenes/ActionsList/actions_list.tscn
+msgid "CONFIRM"
+msgstr "CONFIRMAR"
+
+#: Scenes/ActionsList/action_item.tscn
+msgid "Text"
+msgstr "Texto"
+
+#: Scenes/ActionsList/action_item.tscn
+msgid "x"
+msgstr "x"
+
+#: Scenes/Action/action.tscn
+msgid "Act\tion text"
+msgstr "Texto da ação"

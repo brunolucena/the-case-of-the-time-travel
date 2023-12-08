@@ -11,6 +11,9 @@ config_version=5
 [application]
 
 config/name="The Case Of The Time Travel"
+config/name_localized={
+"pt_BR": "O Caso da Viagem no Tempo"
+}
 run/main_scene="res://Scenes/MainMenu/main_menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
@@ -69,3 +72,9 @@ area_left={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194319,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://locale/pt_BR.po")
+locale/translations_pot_files=PackedStringArray("res://Scenes/MainMenu/main_menu.tscn", "res://Scenes/Scene2/scene_2_ABC.tscn", "res://Scenes/Endings/ending_test.tscn", "res://Scenes/BaseScene/base_scene.tscn", "res://Scenes/BaseScene/OverviewArea/overview_area.tscn", "res://Scenes/BaseScene/Area/area.tscn", "res://Scenes/ActionsList/actions_list.tscn", "res://Scenes/ActionsList/action_item.tscn", "res://Scenes/Action/action.tscn", "res://Scenes/Action/action.gd", "res://Scenes/BaseScene/base_scene.gd", "res://Scenes/scene_1.tscn")
+locale/test="pt_BR"

@@ -1,0 +1,91 @@
+# LANGUAGE translation for The Case Of The Time Travel for the following files:
+# res://Scenes/MainMenu/main_menu.tscn
+# res://Scenes/Scene2/scene_2_ABC.tscn
+# res://Scenes/Endings/ending_test.tscn
+# res://Scenes/BaseScene/base_scene.tscn
+# res://Scenes/BaseScene/OverviewArea/overview_area.tscn
+# res://Scenes/BaseScene/Area/area.tscn
+# res://Scenes/ActionsList/actions_list.tscn
+# res://Scenes/ActionsList/action_item.tscn
+# res://Scenes/Action/action.tscn
+# res://Scenes/Action/action.gd
+# res://Scenes/BaseScene/base_scene.gd
+# res://Scenes/scene_1.tscn
+#
+# FIRST AUTHOR < EMAIL @ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: The Case Of The Time Travel\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: Scenes/MainMenu/main_menu.tscn
+msgid "The Case of The Time Travel"
+msgstr ""
+
+#: Scenes/MainMenu/main_menu.tscn
+msgid "New Game"
+msgstr ""
+
+#: Scenes/Endings/ending_test.tscn
+msgid "Ending"
+msgstr ""
+
+#: Scenes/BaseScene/OverviewArea/overview_area.tscn
+msgid "Main Scene"
+msgstr ""
+
+#: Scenes/BaseScene/OverviewArea/overview_area.tscn
+msgid "Area 1"
+msgstr ""
+
+#: Scenes/BaseScene/OverviewArea/overview_area.tscn
+msgid "Area 2"
+msgstr ""
+
+#: Scenes/BaseScene/OverviewArea/overview_area.tscn
+msgid "Area 3"
+msgstr ""
+
+#: Scenes/BaseScene/OverviewArea/overview_area.tscn
+msgid "Area 4"
+msgstr ""
+
+#: Scenes/BaseScene/Area/area.tscn
+msgid "Area Title"
+msgstr ""
+
+#: Scenes/BaseScene/Area/area.tscn
+msgid "Previous Scene"
+msgstr ""
+
+#: Scenes/BaseScene/Area/area.tscn
+msgid "Next Scene"
+msgstr ""
+
+#: Scenes/BaseScene/Area/area.tscn
+msgid "Back to Main Scene"
+msgstr ""
+
+#: Scenes/ActionsList/actions_list.tscn
+msgid "Selected Actions"
+msgstr ""
+
+#: Scenes/ActionsList/actions_list.tscn
+msgid "CONFIRM"
+msgstr ""
+
+#: Scenes/ActionsList/action_item.tscn
+msgid "Text"
+msgstr ""
+
+#: Scenes/ActionsList/action_item.tscn
+msgid "x"
+msgstr ""
+
+#: Scenes/Action/action.tscn
+msgid "Act	ion text"
+msgstr ""
