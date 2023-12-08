@@ -8,11 +8,7 @@ func _ready() -> void:
 	animation_player.play("enter")
 	animation_player.queue("enter2")
 
-	Dialogic.connect('signal_event', func(argument: String):
-		print(argument)
-		if argument == "ended":
-			start_game()
-	)
+	Dialogic.timeline_ended.connect(start_game)
 
 
 func _input(event: InputEvent) -> void:
@@ -20,6 +16,7 @@ func _input(event: InputEvent) -> void:
 		if event is InputEventKey:
 			if event.keycode == KEY_ESCAPE and event.is_pressed():
 				animation_player.stop()
+				Dialogic.end_timeline()
 				start_game()
 
 
@@ -28,5 +25,5 @@ func start_dialog():
 
 
 func start_game():
-	Dialogic.end_timeline()
+	Dialogic.timeline_ended.disconnect(start_game)
 	get_tree().change_scene_to_file("res://Scenes/DoTimeTravel/do_time_travel.tscn")
