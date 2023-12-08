@@ -25,5 +25,4 @@ func start_dialog():
 
 
 func start_game():
-	Dialogic.timeline_ended.disconnect(start_game)
 	get_tree().change_scene_to_file("res://Scenes/DoTimeTravel/do_time_travel.tscn")
