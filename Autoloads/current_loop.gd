@@ -13,7 +13,7 @@ var last_scene_position = 2
 var music_choice_path = "res://Autoloads/musics/TTT_CHOICE_v2.mp3"
 var music_crime_scene_path = "res://Autoloads/musics/TTT_CRIME_SCENE_v2.mp3"
 
-@onready var MusicPlayer = $MusicPlayer
+@onready var MusicPlayer: AudioStreamPlayer = $MusicPlayer
 
 
 func add_actions(scene_position: int, scene_actions: Array[Dictionary]):
@@ -36,6 +36,11 @@ func get_scene_actions_as_string(scene_position: int) -> String:
 
 	return actions_as_string
 
+func start_music():
+	if not MusicPlayer.playing:
+		MusicPlayer.stream = load(music_crime_scene_path)
+		MusicPlayer.play()
+
 func to_ending():
 	get_tree().change_scene_to_file("res://Scenes/Endings/ending_test.tscn")
 	MusicPlayer.stop()
@@ -44,8 +49,7 @@ func to_ending():
 
 func to_first_scene():
 	get_tree().change_scene_to_file("res://Scenes/Scene1/scene_1.tscn")
-	MusicPlayer.stream = load(music_crime_scene_path)
-	MusicPlayer.play()
+	start_music()
 
 func to_next_scene():
 	if current_scene == last_scene_position:

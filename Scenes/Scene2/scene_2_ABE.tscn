@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://ka8dv6past3b"]
+
+[ext_resource type="PackedScene" uid="uid://cm3jd1w063vb7" path="res://Scenes/BaseScene/base_scene.tscn" id="1_6wcc7"]
+
+[node name="Scene2" instance=ExtResource("1_6wcc7")]
+level_number = 2
+
+[node name="Title" parent="OverviewArea/MarginContainer" index="0"]
+text = "Scene 2 ABC"
+
+[editable path="OverviewArea"]
+[editable path="Area1"]
+[editable path="Area1/ActionA"]
+[editable path="Area1/ActionB"]
+[editable path="Area2"]
+[editable path="Area2/ActionC"]
+[editable path="Area3"]
+[editable path="Area3/ActionD"]
+[editable path="Area4"]
+[editable path="Area4/ActionE"]
+[editable path="ActionsList"]

@@ -13,6 +13,7 @@ var selected_actions: Array[Dictionary] = []
 @onready var ActionsList = $ActionsList as ActionsList
 
 func _ready() -> void:
+	CurrentLoop.start_music()
 	active_area = $OverviewArea
 	for action in get_tree().get_nodes_in_group('action'):
 		if action is Action:

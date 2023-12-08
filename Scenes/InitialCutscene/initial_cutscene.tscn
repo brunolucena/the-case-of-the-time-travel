@@ -3,22 +3,6 @@
 [ext_resource type="Script" path="res://Scenes/InitialCutscene/initial_cutscene.gd" id="1_rwft0"]
 [ext_resource type="AudioStream" uid="uid://derov2h6dpdep" path="res://Autoloads/musics/TTT_TRAUMA.mp3" id="2_08gnx"]
 
-[sub_resource type="Animation" id="Animation_wkyfv"]
-resource_name = "appear"
-length = 6.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 4, 6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_mkpmn"]
 length = 0.001
 tracks/0/type = "value"
@@ -46,9 +30,25 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_wkyfv"]
+resource_name = "appear"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_e4irx"]
 resource_name = "enter2"
-length = 10.0
+length = 12.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -56,7 +56,7 @@ tracks/0/path = NodePath("../MarginContainer/Label2:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 8.5, 10),
+"times": PackedFloat32Array(0, 1, 10, 12),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -68,7 +68,7 @@ tracks/1/path = NodePath("../..")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(10),
+"times": PackedFloat32Array(12),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
