@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dj8k37ndeoyxo"]
+[gd_scene load_steps=3 format=3 uid="uid://dj8k37ndeoyxo"]
 
 [ext_resource type="Script" path="res://Scenes/MainMenu/main_menu.gd" id="1_op0vn"]
+[ext_resource type="AudioStream" uid="uid://c0ef1mpp8j68c" path="res://Autoloads/musics/TTT_Main_Theme_v2.mp3" id="2_xaf8l"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_op0vn")
@@ -24,6 +25,7 @@ size_flags_horizontal = 4
 text = "New Game"
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_xaf8l")
 autoplay = true
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]

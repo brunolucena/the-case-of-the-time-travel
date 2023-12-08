@@ -2,4 +2,4 @@ extends Node2D
 
 
 func _on_new_game_pressed() -> void:
-	CurrentLoop.to_first_scene()
+	get_tree().change_scene_to_file("res://Scenes/InitialCutscene/initial_cutscene.tscn")

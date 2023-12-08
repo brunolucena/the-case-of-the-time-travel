@@ -1,0 +1,19 @@
+[background arg="res://Scenes/InitialCutscene/assets/scene1.png" fade="0.0"]
+I remember how you laughed when I told you my research aims. “Crossing the bounds of the Many-Worlds interpretation of quantum physics,” yet you understood in the end, as so few did.
+You supported me, even as others laughed at my work, my invention.
+The first machine to let people travel between parallel worlds, what should have been the greatest discovery known to trashed in the papers as a pile of junk, since I could only transport people to universes with a similarity profile of “99.99999999999%”
+Yet you supported me every step of the way. And I…
+[background arg="res://Scenes/BaseScene/Area/images/area_1.jpg" fade="0.0"]
+I knew there was something off about that man, milling outside our house, that man in the cloak and cowl.
+I should have called the cops, or stayed with you, but the presentation was in five minutes and I…
+[background arg="res://Scenes/BaseScene/Area/images/area_2.jpg" fade="0.0"]
+When I came home that night there was naught but a single bloodstain.
+No sign of what happen besides a broken window. And now, a broken life.
+[background arg="res://Scenes/BaseScene/Area/images/area_3.png" fade="0.0"]
+But it will not be broken for long. Those books you loved, those science fiction pulps and the like, I read them, finally, and I had a realization.
+My machine cannot take me to a universe where you didn’t… disappear. But it can take me to a different time in an identical universe.
+A “time machine” like those in your books. It is my chance to make things right. My chance to save you.
+[background arg="res://Scenes/BaseScene/Area/images/area_4.jpg" fade="0.0"]
+In eternal love,\
+Everett Wells
+[signal arg="ended"]

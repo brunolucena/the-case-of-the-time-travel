@@ -43,7 +43,7 @@ func to_ending():
 	MusicPlayer.play()
 
 func to_first_scene():
-	get_tree().change_scene_to_file("res://Scenes/scene_1.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Scene1/scene_1.tscn")
 	MusicPlayer.stream = load(music_crime_scene_path)
 	MusicPlayer.play()
 
