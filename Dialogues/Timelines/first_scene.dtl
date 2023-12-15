@@ -1,0 +1,19 @@
+[background arg="res://Scenes/BaseScene/Area/images/black_screen.png" fade="0.0"]
+[music path="res://Autoloads/musics/Activate_Time_Travel_v1.mp3" fade="0.0" volume="0.0" loop="false"]
+[wait time="4.0"]
+narrator: My vision spins...
+narrator: My stomach wishes to evacuate its contents. I barely manage to keep the remains of my turkey and rye sandwich from splattering over the cobblestones.
+narrator: Did it work? The house looks as it always does, but there! The old Oak!
+narrator: After I sold the townhouse they cut it down, but there it is, just as I remember. We carved our initials in that oak, so many years ago.
+narrator: If it’s back that means…
+[signal arg="start_music"]
+[wait time="1.0"]
+[background arg="res://Scenes/Scene1/assets/Bedroom.png" fade="0.0"]
+everett: Dear have you seen my glasses?
+Elonai: Over here. Next to your briefcase!
+narrator: Her voice, how wondrous it is to hear
+everett: My wits have left me. Its hard to believe todays the big day.
+narrator: Yes, the big day, the terrible day.
+narrator: What should have been a moment of my greatest triumph turned into humiliation, the tragedy.
+narrator: In thirty minutes my wife will be murdered by a man in a strange cowl.
+narrator: While my past self and her are distracted, I should make good use of my time here.

@@ -1,0 +1,5 @@
+narrator: Hmm… Some old pamphlets, menus, paper clips. What’s this? A gun. Ah, right! I recall. Elonai had said she wanted a dog to take on her evening walks, make her feel safe.
+narrator: But dogs are messy things, I thought this a simpler solution, but she never gave it a go.
+narrator: Hmm… this could be useful, if I can find the murderer, I could end him before he has a chance to strike.
+[background arg="res://Scenes/BaseScene/Area/images/black_screen.png" fade="0.0"]
+[wait time="1.0"]

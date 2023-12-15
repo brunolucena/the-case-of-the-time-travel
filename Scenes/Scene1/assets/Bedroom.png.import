@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkiorvvs2sysd"
-path="res://.godot/imported/area_3.png-311fcc5d13ff4bfa132be5e27db0d45a.ctex"
+uid="uid://coj1nb60lq3kw"
+path="res://.godot/imported/Bedroom.png-d48e81dd259ba070e0fc6eca58269895.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/BaseScene/Area/images/area_3.png"
-dest_files=["res://.godot/imported/area_3.png-311fcc5d13ff4bfa132be5e27db0d45a.ctex"]
+source_file="res://Scenes/Scene1/assets/Bedroom.png"
+dest_files=["res://.godot/imported/Bedroom.png-d48e81dd259ba070e0fc6eca58269895.ctex"]
 
 [params]
 

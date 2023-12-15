@@ -1,0 +1,5 @@
+narrator: I open the closet. Just some old coats, my bowler cap, back when I was a bachelor and thought it fashionable and— what’s this?
+narrator: A cloak and cowl, black just like the killers. Yes, I remember! It was from an old Dracula Costume, from years ago.
+narrator: How strange… does that mean the killer broke into our home first? Perhaps expected to see Elonai alone? I don’t know, but best take this cloak as evidence.
+[background arg="res://Scenes/BaseScene/Area/images/black_screen.png" fade="0.0"]
+[wait time="1.0"]

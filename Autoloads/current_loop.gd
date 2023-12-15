@@ -10,6 +10,7 @@ var actions = {
 var current_scene = 1
 var last_scene_position = 2
 
+var music_change_scene_path = "res://Autoloads/musics/Change_Scene_v1.mp3"
 var music_choice_path = "res://Autoloads/musics/TTT_CHOICE_v2.mp3"
 var music_crime_scene_path = "res://Autoloads/musics/TTT_CRIME_SCENE_v2.mp3"
 
@@ -18,7 +19,10 @@ var music_crime_scene_path = "res://Autoloads/musics/TTT_CRIME_SCENE_v2.mp3"
 
 func add_actions(scene_position: int, scene_actions: Array[Dictionary]):
 	actions[scene_position] = scene_actions
-	to_next_scene()
+
+	var timeline = "1%s-confirm" % scene_actions[0].action_id
+	Dialogic.start(timeline)
+	Dialogic.timeline_ended.connect(func(): to_next_scene())
 
 func get_scene_actions_ids(scene_position: int) -> String:
 	var scene_actions_mapped_sorted = actions[scene_position].map(func(action): return action.action_id)
@@ -49,20 +53,24 @@ func to_ending():
 
 func to_first_scene():
 	get_tree().change_scene_to_file("res://Scenes/Scene1/scene_1.tscn")
-	start_music()
 
 func to_next_scene():
 	if current_scene == last_scene_position:
 		to_ending()
 		return
 
-	var actions_as_string = get_scene_actions_ids(current_scene)
-	var next_scene_path = "res://Scenes/Scene{scene_position}/scene_{scene_position}_{actions}.tscn"
-	var next_scene_path_formated = next_scene_path.format({
-		"scene_position": current_scene + 1,
-		"actions": actions_as_string,
-	})
+	MusicPlayer.stop()
+	MusicPlayer.stream = load(music_change_scene_path)
+	MusicPlayer.play()
+	MusicPlayer.finished.connect(start_music)
 
-	get_tree().change_scene_to_file(next_scene_path_formated)
+#	var actions_as_string = get_scene_actions_ids(current_scene)
+#	var next_scene_path = "res://Scenes/Scene{scene_position}/scene_{scene_position}_{actions}.tscn"
+#	var next_scene_path_formated = next_scene_path.format({
+#		"scene_position": current_scene + 1,
+#		"actions": actions_as_string,
+#	})
+
+	get_tree().change_scene_to_file("res://Scenes/Scene2/scene_2.tscn")
 
 	current_scene += 1

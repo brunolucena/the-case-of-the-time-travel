@@ -7,9 +7,10 @@ extends Node2D
 
 func add_item(item: ActionItem):
 	Items.add_child(item)
-	if Items.get_child_count() == 3:
+	if Items.get_child_count() == 1:
 		ConfirmButton.disabled = false
 
 func remove_item(index: int):
-	Items.get_child(index).queue_free()
+	if is_instance_valid(Items.get_child(index)):
+		Items.get_child(index).queue_free()
 	ConfirmButton.disabled = true

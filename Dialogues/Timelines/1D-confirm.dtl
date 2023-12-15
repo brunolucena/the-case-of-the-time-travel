@@ -1,0 +1,21 @@
+narrator: It seems like a waste to spy on my memories, but I suppose it is worth a shot.
+Elonai: I didn’t have a chance to tell you yet, but my story got accepted in Clarkesworld.
+everett: Clark who? Oh, that old sci-fi rag?
+Elonai: Yes, its the story I was telling you about, the fisherman who gets lost at sea and finds a crashed alien ship…
+narrator: She was always talking about her stories, her ideas. How funny, it was one thing to write about speculative science, another to do it, as I would say. But I would always humor her.
+everett: Right, right sure, sure. Did you make sure to pack me some breath mints? Dean Crichton will be there, and I want to make sure I leave a pleasant impression.
+Elonai: Oh. Uh, yes, I did, of course, dear.
+everett: This is the most important day of our lives, dear, can’t go messing this up. Breaking the bounds between realities. All my work on multiverse theory coming together. Might even get me tenure.
+Elonai: Oh, I was thinking, maybe after all this we could take a trip together. It has been a long time. Remember how we always talked of seeing the Galapagos. In fact I was reading—
+everett: If tonight goes well, I can’t imagine I’d have the time.
+Elonai: Right. Of course. I just thought after all these months with you working late…
+narrator: Why does she sound… hurt, sad? I don’t recall this at all.
+[background arg="res://Scenes/BaseScene/Area/images/black_screen.png" fade="0.0"]
+[wait time="1.0"]
+[background arg="res://Scenes/BaseScene/Area/images/Living_Room.png" fade="0.0"]
+everett: Are you ready? We’re running late!
+Elonai: Really? I thought your presentation was at 3\:30?
+everett: No, at 3, you must have misheard me. Ah, nevermind, I can’t miss the opening speech. Meet me there, okay
+narrator: That’s the end of my time here. Best make it to the presentation.
+[background arg="res://Scenes/BaseScene/Area/images/black_screen.png" fade="0.0"]
+[wait time="1.0"]

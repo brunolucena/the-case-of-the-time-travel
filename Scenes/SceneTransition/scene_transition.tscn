@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://mvex3dufrwr1"]
+
+[ext_resource type="Script" path="res://Scenes/SceneTransition/scene_transition.gd" id="1_f6bfk"]
+
+[sub_resource type="Animation" id="Animation_7hfkp"]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kmcfy"]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6fpi1"]
+_data = {
+"RESET": SubResource("Animation_7hfkp"),
+"fade_out": SubResource("Animation_kmcfy")
+}
+
+[node name="SceneTransition" type="ColorRect"]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(1, 1, 1, 0)
+script = ExtResource("1_f6bfk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6fpi1")
+}

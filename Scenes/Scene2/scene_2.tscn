@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0cv74borvtwn"]
+
+[ext_resource type="PackedScene" uid="uid://wckj5wfspkl8" path="res://Scenes/Scene1/scene_1.tscn" id="1_rsief"]
+[ext_resource type="Texture2D" uid="uid://bp8ucfei2b8jl" path="res://Scenes/Scene2/assets/Cathy_Hall.png" id="2_r1ykw"]
+[ext_resource type="PackedScene" uid="uid://ca27kj0hrwt8b" path="res://Scenes/SceneTitle/scene_title.tscn" id="3_ysdvt"]
+
+[node name="Scene2" instance=ExtResource("1_rsief")]
+level_number = 2
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_r1ykw")
+
+[node name="SceneTitle" parent="." index="7" instance=ExtResource("3_ysdvt")]
+
+[node name="Label" parent="SceneTitle/CenterContainer" index="0"]
+text = "The Presentation"
+
+[editable path="ActionA"]
+[editable path="ActionB"]
+[editable path="ActionC"]
+[editable path="ActionD"]
+[editable path="ActionsList"]
+[editable path="SceneTitle"]

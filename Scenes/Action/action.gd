@@ -9,6 +9,7 @@ signal action_pressed(action_id: String, action_description: String)
 
 func _ready() -> void:
 	$TextContainer.hide()
+	$AnimationPlayer.play("blink")
 
 func _on_area_2d_mouse_entered() -> void:
 	$TextContainer.show()
@@ -19,4 +20,5 @@ func _on_area_2d_mouse_exited() -> void:
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
+			$AudioStreamPlayer.play()
 			emit_signal("action_pressed", action_id, action_description)

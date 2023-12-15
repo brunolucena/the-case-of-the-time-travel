@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="The Case Of The Time Travel"
+config/name="Dear Elonai"
 config/name_localized={
 "pt_BR": "O Caso da Viagem no Tempo"
 }
