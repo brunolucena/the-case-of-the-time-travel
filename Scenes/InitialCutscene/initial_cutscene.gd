@@ -2,13 +2,15 @@ extends Node2D
 
 @onready var animation_player = $"%AnimationPlayer"
 
+var current_scene = 0
+var last_scene = 9
+
 
 func _ready() -> void:
 	await get_tree().create_timer(2.0).timeout
-	animation_player.play("enter")
-	animation_player.queue("enter2")
-
-	Dialogic.timeline_ended.connect(start_game)
+	play_scene(current_scene)
+	current_scene += 1
+	animation_player.queue("%s" % current_scene)
 
 
 func _input(event: InputEvent) -> void:
@@ -19,9 +21,19 @@ func _input(event: InputEvent) -> void:
 				Dialogic.end_timeline()
 				start_game()
 
+	var can_interact =  not animation_player.is_playing() and current_scene != 0
 
-func start_dialog():
-	Dialogic.start("initial_cutscene_1")
+	if event.is_action_pressed("dialogic_default_action"):
+		if can_interact:
+			current_scene += 1
+			play_scene(current_scene)
+
+
+func play_scene(scene: int):
+	if scene == last_scene + 1:
+		start_game()
+	else:
+		animation_player.play("%s" % scene)
 
 
 func start_game():

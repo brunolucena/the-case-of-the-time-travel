@@ -8,17 +8,20 @@ signal action_pressed(action_id: String, action_description: String)
 
 
 func _ready() -> void:
-	$TextContainer.hide()
-	$AnimationPlayer.play("blink")
+	$CenterContainer/TextContainer.hide()
 
 func _on_area_2d_mouse_entered() -> void:
-	$TextContainer.show()
+	$CenterContainer/TextContainer.show()
 
 func _on_area_2d_mouse_exited() -> void:
-	$TextContainer.hide()
+	$CenterContainer/TextContainer.hide()
 
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
-			$AudioStreamPlayer.play()
-			emit_signal("action_pressed", action_id, action_description)
+			var timeline = "%s%s" % [get_parent().level_number, action_id]
+			Dialogic.start(timeline)
+			Dialogic.signal_event.connect(func(event):
+				if event == 'yes':
+					emit_signal("action_pressed", action_id, action_description)
+			)

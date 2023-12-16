@@ -10,7 +10,7 @@ level_number = 2
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_r1ykw")
 
-[node name="SceneTitle" parent="." index="7" instance=ExtResource("3_ysdvt")]
+[node name="SceneTitle" parent="." index="6" instance=ExtResource("3_ysdvt")]
 
 [node name="Label" parent="SceneTitle/CenterContainer" index="0"]
 text = "The Presentation"
@@ -18,6 +18,5 @@ text = "The Presentation"
 [editable path="ActionA"]
 [editable path="ActionB"]
 [editable path="ActionC"]
-[editable path="ActionD"]
-[editable path="ActionsList"]
 [editable path="SceneTitle"]
+[editable path="ActionD"]

@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cf565qnefheo2"]
+
+[ext_resource type="FontFile" uid="uid://7a6li3ihag6a" path="res://Fonts/Britannic-T-Bold_FontYukle/Britannic T Bold.ttf" id="1_xtu6w"]
+
+[resource]
+Label/fonts/font = ExtResource("1_xtu6w")

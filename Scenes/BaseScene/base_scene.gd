@@ -9,20 +9,15 @@ var active_area: Node2D
 var active_area_number
 var selected_actions: Array[Dictionary] = []
 
-@onready var ActionItem = preload("res://Scenes/ActionsList/action_item.tscn")
-@onready var ActionsList = $ActionsList as ActionsList
-
 func _ready() -> void:
-	for action in get_tree().get_nodes_in_group('action'):
-		if action is Action:
-			action.action_pressed.connect(add_action)
+	hide_actions()
 
 	if level_number == 1:
 		Dialogic.start("first_scene")
+		Dialogic.timeline_ended.connect(show_actions)
 	else:
 		Dialogic.start("scene_%s" % level_number)
-		var previous_actions = CurrentLoop.get_scene_actions_ids(level_number - 1)
-		print("previous_actions ", previous_actions)
+		Dialogic.timeline_ended.connect(show_actions)
 
 	Dialogic.signal_event.connect(func(event):
 		if event == "start_music":
@@ -59,6 +54,18 @@ func _ready() -> void:
 #		elif event.is_action_pressed("previous_area"):
 #			to_previous_area()
 
+
+func show_actions():
+	for action in get_tree().get_nodes_in_group('action'):
+		if action is Action:
+			action.show()
+
+func hide_actions():
+	for action in get_tree().get_nodes_in_group('action'):
+		if action is Action:
+			action.hide()
+			action.action_pressed.connect(add_action)
+
 func add_action(action_id: String, action_description: String):
 	if selected_actions.size() == max_actions:
 		return
@@ -75,10 +82,17 @@ func add_action(action_id: String, action_description: String):
 			"action_id": action_id,
 			"action_description": action_description
 		})
-		var new_action = ActionItem.instantiate()
-		new_action.set_text(action_description)
-		new_action.get_remove_button().connect('pressed', remove_action.bind(action_id))
-		ActionsList.add_item(new_action)
+
+	if action_id == "A":
+		$WardrobeOpen.show()
+	elif action_id == "C":
+		$DrawersOpen.show()
+
+	for action in get_tree().get_nodes_in_group('action'):
+		if action is Action:
+			action.hide()
+
+	confirm_actions()
 
 #func change_area(area_number: int):
 #	var next_area = get_node("Area" + str(area_number))
@@ -104,7 +118,6 @@ func remove_action(action_id: String):
 
 	if action_index_found != -1:
 		selected_actions.pop_at(action_index_found)
-		ActionsList.remove_item(action_index_found)
 
 #func to_main_scene():
 #	active_area.hide()

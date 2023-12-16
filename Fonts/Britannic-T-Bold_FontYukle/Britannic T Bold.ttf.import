@@ -1,0 +1,33 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://7a6li3ihag6a"
+path="res://.godot/imported/Britannic T Bold.ttf-77e4ea2ed8cb1309be7244af4520fcce.fontdata"
+
+[deps]
+
+source_file="res://Fonts/Britannic-T-Bold_FontYukle/Britannic T Bold.ttf"
+dest_files=["res://.godot/imported/Britannic T Bold.ttf-77e4ea2ed8cb1309be7244af4520fcce.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=1
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}

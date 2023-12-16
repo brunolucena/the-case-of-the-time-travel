@@ -21,7 +21,7 @@ func add_actions(scene_position: int, scene_actions: Array[Dictionary]):
 	actions[scene_position] = scene_actions
 
 	var timeline = "1%s-confirm" % scene_actions[0].action_id
-	Dialogic.start(timeline)
+	Dialogic.start_timeline(timeline)
 	Dialogic.timeline_ended.connect(func(): to_next_scene())
 
 func get_scene_actions_ids(scene_position: int) -> String:

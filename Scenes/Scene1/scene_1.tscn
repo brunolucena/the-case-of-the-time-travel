@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://wckj5wfspkl8"]
+[gd_scene load_steps=7 format=3 uid="uid://wckj5wfspkl8"]
 
 [ext_resource type="Script" path="res://Scenes/BaseScene/base_scene.gd" id="1_s0j5i"]
 [ext_resource type="Texture2D" uid="uid://coj1nb60lq3kw" path="res://Scenes/Scene1/assets/Bedroom.png" id="2_apjp8"]
+[ext_resource type="Texture2D" uid="uid://cjpph6q65wmom" path="res://Scenes/Scene1/assets/Bedroom_Wardrobe_Open.png" id="3_gybuu"]
+[ext_resource type="Texture2D" uid="uid://cb6hj5nt382tm" path="res://Scenes/Scene1/assets/Bedroom_Drawers_Open.png" id="4_hy8la"]
 [ext_resource type="PackedScene" uid="uid://mvex3dufrwr1" path="res://Scenes/SceneTransition/scene_transition.tscn" id="5_dpw4w"]
 [ext_resource type="PackedScene" uid="uid://bvqww8686e8x5" path="res://Scenes/Action/action.tscn" id="5_qytvm"]
-[ext_resource type="PackedScene" uid="uid://mj3v7k667e2w" path="res://Scenes/ActionsList/actions_list.tscn" id="6_iyw24"]
 
 [node name="Scene1" type="Node2D"]
 script = ExtResource("1_s0j5i")
@@ -15,61 +16,59 @@ position = Vector2(576, 324)
 scale = Vector2(1.8, 1.8)
 texture = ExtResource("2_apjp8")
 
+[node name="WardrobeOpen" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(576, 324)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("3_gybuu")
+
+[node name="DrawersOpen" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(576, 324)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("4_hy8la")
+
 [node name="ActionA" parent="." instance=ExtResource("5_qytvm")]
+position = Vector2(189, 184)
 action_id = "A"
-action_description = "Look in Closet"
+action_description = "Open Wardrobe"
 
 [node name="Area2D" parent="ActionA" index="0"]
-position = Vector2(-99, 57)
+position = Vector2(15, -8)
 
 [node name="CollisionPolygon2D" parent="ActionA/Area2D" index="0"]
 polygon = PackedVector2Array(-89, -116, 31, -118, 34, 177, -91, 221)
 
-[node name="TextContainer" parent="ActionA" index="1"]
-offset_left = -55.0
-offset_top = 40.0
-offset_right = 86.0
-offset_bottom = 98.0
+[node name="CenterContainer" parent="ActionA" index="1"]
+offset_left = 54.0
+offset_top = -17.0
+offset_right = 179.0
+offset_bottom = 33.0
 
-[node name="Text" parent="ActionA/TextContainer/MarginContainer" index="0"]
-text = "Look in Closet"
-
-[node name="Polygon2D" parent="ActionA" index="2"]
-position = Vector2(-99, 57)
+[node name="Text" parent="ActionA/CenterContainer/TextContainer/MarginContainer" index="0"]
+text = "Open Wardrobe"
 
 [node name="ActionB" parent="." instance=ExtResource("5_qytvm")]
 position = Vector2(606, 247)
 action_id = "B"
-action_description = "Search Bookshelf"
+action_description = "Examine Books"
 
 [node name="CollisionPolygon2D" parent="ActionB/Area2D" index="0"]
 polygon = PackedVector2Array(-96, -30, 106, -27, 104, 35, -96, 37)
 
-[node name="TextContainer" parent="ActionB" index="1"]
-offset_left = -79.0
-offset_top = -102.0
-offset_right = 87.0
-offset_bottom = -44.0
-
-[node name="Text" parent="ActionB/TextContainer/MarginContainer" index="0"]
-text = "Search Bookshelf"
+[node name="Text" parent="ActionB/CenterContainer/TextContainer/MarginContainer" index="0"]
+text = "Examine Books"
 
 [node name="ActionC" parent="." instance=ExtResource("5_qytvm")]
 position = Vector2(608, 376)
 action_id = "C"
-action_description = "Search Drawer"
+action_description = "Open Drawer"
 
 [node name="CollisionPolygon2D" parent="ActionC/Area2D" index="0"]
 polygon = PackedVector2Array(-111, -24, 116, -24, 114, 24, -110, 26)
 
-[node name="TextContainer" parent="ActionC" index="1"]
-offset_left = -70.0
-offset_top = -87.0
-offset_right = 76.0
-offset_bottom = -29.0
-
-[node name="Text" parent="ActionC/TextContainer/MarginContainer" index="0"]
-text = "Search Drawer"
+[node name="Text" parent="ActionC/CenterContainer/TextContainer/MarginContainer" index="0"]
+text = "Open Drawer"
 
 [node name="ActionD" parent="." instance=ExtResource("5_qytvm")]
 position = Vector2(846, 261)
@@ -79,23 +78,12 @@ action_description = "Spy on Elonai’s and Everett’s conversation"
 [node name="CollisionPolygon2D" parent="ActionD/Area2D" index="0"]
 polygon = PackedVector2Array(-24, -63, 186, -59, 189, 99, -24, 98)
 
-[node name="TextContainer" parent="ActionD" index="1"]
-offset_left = -95.0
-offset_top = -131.0
-offset_right = 260.0
-offset_bottom = -73.0
-
-[node name="Text" parent="ActionD/TextContainer/MarginContainer" index="0"]
+[node name="Text" parent="ActionD/CenterContainer/TextContainer/MarginContainer" index="0"]
 text = "Spy on Elonai’s and Everett’s conversation"
 
-[node name="ActionsList" parent="." instance=ExtResource("6_iyw24")]
-
 [node name="SceneTransition" parent="." instance=ExtResource("5_dpw4w")]
-
-[connection signal="pressed" from="ActionsList/PanelContainer/MarginContainer/VBoxContainer/ConfirmButton" to="." method="_on_confirm_button_pressed" flags=18]
 
 [editable path="ActionA"]
 [editable path="ActionB"]
 [editable path="ActionC"]
 [editable path="ActionD"]
-[editable path="ActionsList"]

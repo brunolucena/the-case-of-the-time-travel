@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oqatx4a68t6a"
-path="res://.godot/imported/scene1.png-8cbfa761c3c2e76a0f57fc3786ad7d19.ctex"
+uid="uid://i1o3kv1psk6q"
+path="res://.godot/imported/My_Dearest_Elonai_title_page.png-afb8b4854f0bbe90feaef9c19c510e78.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/InitialCutscene/assets/scene1.png"
-dest_files=["res://.godot/imported/scene1.png-8cbfa761c3c2e76a0f57fc3786ad7d19.ctex"]
+source_file="res://Scenes/InitialCutscene/assets/My_Dearest_Elonai_title_page.png"
+dest_files=["res://.godot/imported/My_Dearest_Elonai_title_page.png-afb8b4854f0bbe90feaef9c19c510e78.ctex"]
 
 [params]
 

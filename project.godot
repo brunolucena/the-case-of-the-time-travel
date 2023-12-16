@@ -28,7 +28,18 @@ Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
 glossary/default_case_sensitive=true
 layout/styles={
 "Default": {
-"inherits": ""
+"export_overrides": {
+"bold_font": "\"res://Fonts/Inter/Inter-VariableFont_slnt,wght.ttf\"",
+"bold_italic_font": "\"res://Fonts/Inter/Inter-VariableFont_slnt,wght.ttf\"",
+"box_modulate": "Color(0.0196078, 0.0196078, 0.0196078, 1)",
+"box_tilt": "0.0",
+"italic_font": "\"res://Fonts/Inter/Inter-VariableFont_slnt,wght.ttf\"",
+"name_label_font": "\"res://Fonts/Inter/Inter-VariableFont_slnt,wght.ttf\"",
+"next_indicator_texture": "\"res://Scenes/Action/assets/Arrow.png\"",
+"normal_font": "\"res://Fonts/Inter/Inter-VariableFont_slnt,wght.ttf\""
+},
+"inherits": "",
+"layout": "res://addons/dialogic/Modules/DefaultLayouts/RPG_BoxPortrait/DialogicRPGLayout.tscn"
 }
 }
 layout/default_style="Default"
@@ -66,6 +77,10 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 [filesystem]
 
 import/blender/enabled=false
+
+[gui]
+
+theme/custom="res://Themes/custom_theme.tres"
 
 [input]
 
