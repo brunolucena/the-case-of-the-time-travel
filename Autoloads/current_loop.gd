@@ -10,19 +10,13 @@ var actions = {
 var current_scene = 1
 var last_scene_position = 2
 
-var music_change_scene_path = "res://Autoloads/musics/Change_Scene_v1.mp3"
-var music_choice_path = "res://Autoloads/musics/TTT_CHOICE_v2.mp3"
-var music_crime_scene_path = "res://Autoloads/musics/TTT_CRIME_SCENE_v2.mp3"
+var music_crime_scene_path = "res://Autoloads/musics/TTT_MUSIC & SFX/TTT_MUSIC/TTT_MUS_CRIME SCENE PAST.wav"
 
 @onready var MusicPlayer: AudioStreamPlayer = $MusicPlayer
 
 
 func add_actions(scene_position: int, scene_actions: Array[Dictionary]):
 	actions[scene_position] = scene_actions
-
-	var timeline = "1%s-confirm" % scene_actions[0].action_id
-	Dialogic.start_timeline(timeline)
-	Dialogic.timeline_ended.connect(func(): to_next_scene())
 
 func get_scene_actions_ids(scene_position: int) -> String:
 	var scene_actions_mapped_sorted = actions[scene_position].map(func(action): return action.action_id)
@@ -40,37 +34,36 @@ func get_scene_actions_as_string(scene_position: int) -> String:
 
 	return actions_as_string
 
+func reset():
+	current_scene = 1
+
 func start_music():
 	if not MusicPlayer.playing:
 		MusicPlayer.stream = load(music_crime_scene_path)
 		MusicPlayer.play()
 
+func stop_music():
+	MusicPlayer.stop()
+
 func to_ending():
+	print("to_ending")
 	get_tree().change_scene_to_file("res://Scenes/Endings/ending_test.tscn")
 	MusicPlayer.stop()
-	MusicPlayer.stream = load(music_choice_path)
-	MusicPlayer.play()
 
 func to_first_scene():
 	get_tree().change_scene_to_file("res://Scenes/Scene1/scene_1.tscn")
 
 func to_next_scene():
-	if current_scene == last_scene_position:
+	print("to_next_scene", {"current_scene": current_scene, "last_scene_position": last_scene_position})
+	if current_scene == 1:
+		MusicPlayer.stop()
+		start_music()
+
+		get_tree().change_scene_to_file("res://Scenes/Scene2/scene_2.tscn")
+
+		current_scene += 1
+	elif current_scene == 2:
 		to_ending()
 		return
 
-	MusicPlayer.stop()
-	MusicPlayer.stream = load(music_change_scene_path)
-	MusicPlayer.play()
-	MusicPlayer.finished.connect(start_music)
 
-#	var actions_as_string = get_scene_actions_ids(current_scene)
-#	var next_scene_path = "res://Scenes/Scene{scene_position}/scene_{scene_position}_{actions}.tscn"
-#	var next_scene_path_formated = next_scene_path.format({
-#		"scene_position": current_scene + 1,
-#		"actions": actions_as_string,
-#	})
-
-	get_tree().change_scene_to_file("res://Scenes/Scene2/scene_2.tscn")
-
-	current_scene += 1

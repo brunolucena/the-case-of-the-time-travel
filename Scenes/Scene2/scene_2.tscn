@@ -1,22 +1,126 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0cv74borvtwn"]
+[gd_scene load_steps=7 format=3 uid="uid://b0cv74borvtwn"]
 
-[ext_resource type="PackedScene" uid="uid://wckj5wfspkl8" path="res://Scenes/Scene1/scene_1.tscn" id="1_rsief"]
+[ext_resource type="Script" path="res://Scenes/Scene2/scene_2.gd" id="1_pgydr"]
 [ext_resource type="Texture2D" uid="uid://bp8ucfei2b8jl" path="res://Scenes/Scene2/assets/Cathy_Hall.png" id="2_r1ykw"]
 [ext_resource type="PackedScene" uid="uid://ca27kj0hrwt8b" path="res://Scenes/SceneTitle/scene_title.tscn" id="3_ysdvt"]
+[ext_resource type="PackedScene" uid="uid://bvqww8686e8x5" path="res://Scenes/Action/action.tscn" id="5_kixfl"]
+[ext_resource type="AudioStream" uid="uid://rda2ff4mmq0c" path="res://Autoloads/musics/TTT_MUSIC & SFX/TTT_SFX/TTT_SFX_CHANGE SCENE.wav" id="6_be3jr"]
+[ext_resource type="PackedScene" uid="uid://mvex3dufrwr1" path="res://Scenes/SceneTransition/scene_transition.tscn" id="7_dwbhp"]
 
-[node name="Scene2" instance=ExtResource("1_rsief")]
+[node name="Scene2" type="Node2D"]
+script = ExtResource("1_pgydr")
 level_number = 2
 
-[node name="Sprite2D" parent="." index="0"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(1.8, 1.8)
 texture = ExtResource("2_r1ykw")
 
-[node name="SceneTitle" parent="." index="6" instance=ExtResource("3_ysdvt")]
+[node name="ActionA" parent="." instance=ExtResource("5_kixfl")]
+position = Vector2(379, 128)
+action_id = "A"
+action_description = "Enter Front Door"
+
+[node name="Area2D" parent="ActionA" index="0"]
+position = Vector2(15, -8)
+
+[node name="CollisionPolygon2D" parent="ActionA/Area2D" index="0"]
+polygon = PackedVector2Array(-97, -120, 51, -117, 49, 91, -116, 68)
+
+[node name="CenterContainer" parent="ActionA" index="1"]
+offset_left = 54.0
+offset_top = -17.0
+offset_right = 179.0
+offset_bottom = 33.0
+
+[node name="Text" parent="ActionA/CenterContainer/TextContainer/MarginContainer" index="0"]
+text = "Enter Front Door"
+
+[node name="ActionB" parent="." instance=ExtResource("5_kixfl")]
+position = Vector2(394, 424)
+action_id = "B"
+action_description = "Stay in the back and observe"
+
+[node name="CollisionPolygon2D" parent="ActionB/Area2D" index="0"]
+polygon = PackedVector2Array(-96, -30, 106, -27, 104, 35, -96, 37)
+
+[node name="CenterContainer" parent="ActionB" index="1"]
+offset_left = -102.0
+offset_top = 41.0
+offset_right = 117.0
+offset_bottom = 91.0
+
+[node name="Text" parent="ActionB/CenterContainer/TextContainer/MarginContainer" index="0"]
+text = "Stay in the back and observe"
+
+[node name="ActionC" parent="." instance=ExtResource("5_kixfl")]
+position = Vector2(1000, 247)
+action_id = "C"
+action_description = "Sneak in and shoot the cloaked figure"
+
+[node name="CollisionPolygon2D" parent="ActionC/Area2D" index="0"]
+polygon = PackedVector2Array(-111, -24, 116, -24, 114, 24, -110, 26)
+
+[node name="CenterContainer" parent="ActionC" index="1"]
+offset_left = -136.0
+offset_top = 26.0
+offset_right = 147.0
+offset_bottom = 76.0
+
+[node name="Text" parent="ActionC/CenterContainer/TextContainer/MarginContainer" index="0"]
+text = "Sneak in and shoot the cloaked figure"
+
+[node name="ActionD" parent="." instance=ExtResource("5_kixfl")]
+position = Vector2(620, 251)
+action_id = "D"
+action_description = "Go to Elonai"
+
+[node name="CollisionPolygon2D" parent="ActionD/Area2D" index="0"]
+position = Vector2(-23, 0)
+polygon = PackedVector2Array(-90, -57, 143, -59, 142, 53, -89, 51)
+
+[node name="CenterContainer" parent="ActionD" index="1"]
+offset_left = -46.0
+offset_top = -86.0
+offset_right = 60.0
+offset_bottom = -36.0
+
+[node name="Text" parent="ActionD/CenterContainer/TextContainer/MarginContainer" index="0"]
+text = "Go to Elonai"
+
+[node name="ActionE" parent="." instance=ExtResource("5_kixfl")]
+position = Vector2(1001, 246)
+action_id = "E"
+action_description = "Wait in ambush for the cloaked figure"
+
+[node name="CollisionPolygon2D" parent="ActionE/Area2D" index="0"]
+position = Vector2(-23, 0)
+polygon = PackedVector2Array(-90, -57, 143, -59, 142, 53, -89, 51)
+
+[node name="CenterContainer" parent="ActionE" index="1"]
+offset_left = -138.0
+offset_top = 27.0
+offset_right = 144.0
+offset_bottom = 77.0
+
+[node name="Text" parent="ActionE/CenterContainer/TextContainer/MarginContainer" index="0"]
+text = "Wait in ambush for the cloaked figure"
+
+[node name="SceneTitle" parent="." instance=ExtResource("3_ysdvt")]
 
 [node name="Label" parent="SceneTitle/CenterContainer" index="0"]
 text = "The Presentation"
 
+[node name="SceneTransition" parent="." instance=ExtResource("7_dwbhp")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_be3jr")
+volume_db = 10.0
+autoplay = true
+
 [editable path="ActionA"]
 [editable path="ActionB"]
 [editable path="ActionC"]
-[editable path="SceneTitle"]
 [editable path="ActionD"]
+[editable path="ActionE"]
+[editable path="SceneTitle"]

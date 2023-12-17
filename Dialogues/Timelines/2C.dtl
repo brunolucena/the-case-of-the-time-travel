@@ -1,0 +1,6 @@
+narrator: Should I go to Elonai?
+- No
+	[signal arg="no"]
+- Yes
+	[sound path="res://Autoloads/musics/TTT_MUSIC & SFX/TTT_SFX/TTT_SFX_CLICK ACTION.wav" volume="0.0"]
+	[signal arg="yes"]

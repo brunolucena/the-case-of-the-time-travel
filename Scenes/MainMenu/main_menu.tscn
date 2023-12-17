@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dj8k37ndeoyxo"]
 
 [ext_resource type="Script" path="res://Scenes/MainMenu/main_menu.gd" id="1_op0vn"]
-[ext_resource type="AudioStream" uid="uid://c0ef1mpp8j68c" path="res://Autoloads/musics/TTT_Main_Theme_v2.mp3" id="2_xaf8l"]
+[ext_resource type="AudioStream" uid="uid://xgf50qlq1jjv" path="res://Autoloads/musics/TTT_MUSIC & SFX/TTT_MUSIC/TTT_MUS_MAIN THEME.wav" id="2_xaf8l"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_op0vn")

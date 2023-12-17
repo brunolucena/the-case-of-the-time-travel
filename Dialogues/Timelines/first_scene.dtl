@@ -1,12 +1,11 @@
-[music path="res://Autoloads/musics/Activate_Time_Travel_v1.mp3" fade="0.0" volume="0.0" loop="false"]
+[music path="res://Autoloads/musics/TTT_MUSIC & SFX/TTT_SFX/TTT_SFX_CHANGE SCENE.wav" fade="0.0" volume="0.0" loop="false"]
 [wait time="4.0"]
-[background arg="res://Scenes/Scene1/assets/Bedroom.png" fade="0.0"]
 narrator: My vision spins...
+[signal arg="start_music"]
 narrator: My stomach wishes to evacuate its contents. I barely manage to keep the remains of my turkey and rye sandwich from splattering over the cobblestones.
 narrator: Did it work? The house looks as it always does, but there! The old Oak!
 narrator: After I sold the townhouse they cut it down, but there it is, just as I remember. We carved our initials in that oak, so many years ago.
 narrator: If it’s back that means…
-[signal arg="start_music"]
 [wait time="1.0"]
 [background arg="res://Scenes/Scene1/assets/Bedroom.png" fade="0.0"]
 everett: Dear have you seen my glasses?

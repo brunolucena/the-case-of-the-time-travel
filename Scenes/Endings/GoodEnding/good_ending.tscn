@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy7b37osavmqs"]
+
+[ext_resource type="Texture2D" uid="uid://cu0kk7wqnvbg3" path="res://Scenes/Endings/GoodEnding/assets/Good_Ending.png" id="1_63eop"]
+[ext_resource type="AudioStream" uid="uid://c3o5qwn7j5gb5" path="res://Autoloads/musics/TTT_MUSIC & SFX/TTT_MUSIC/TTT_MUS_BEST RESULT.wav" id="2_xjryp"]
+
+[node name="GoodEnding" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_63eop")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_xjryp")
+autoplay = true

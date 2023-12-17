@@ -1,7 +1,6 @@
-[gd_scene load_steps=26 format=3 uid="uid://b3144ywnvkpus"]
+[gd_scene load_steps=27 format=3 uid="uid://b3144ywnvkpus"]
 
 [ext_resource type="Script" path="res://Scenes/InitialCutscene/initial_cutscene.gd" id="1_rwft0"]
-[ext_resource type="AudioStream" uid="uid://derov2h6dpdep" path="res://Autoloads/musics/TTT_TRAUMA.mp3" id="2_08gnx"]
 [ext_resource type="Texture2D" uid="uid://i1o3kv1psk6q" path="res://Scenes/InitialCutscene/assets/My_Dearest_Elonai_title_page.png" id="3_kgcl0"]
 [ext_resource type="Texture2D" uid="uid://cjvqiehygx8ij" path="res://Scenes/InitialCutscene/assets/Scene_-_Prologue_01.png" id="4_6l27o"]
 [ext_resource type="PackedScene" uid="uid://bnkwlt1k7cd6t" path="res://Scenes/Indicator/indicator.tscn" id="4_wfn8i"]
@@ -13,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://btkyuqf22m3l8" path="res://Scenes/InitialCutscene/assets/Scene_-_Prologue_07.png" id="10_c7c2g"]
 [ext_resource type="Texture2D" uid="uid://cyr1yharg8o42" path="res://Scenes/InitialCutscene/assets/Scene_-_Prologue_08.png" id="11_p1yod"]
 [ext_resource type="Texture2D" uid="uid://dpgpg6eavclvh" path="res://Scenes/InitialCutscene/assets/Scene_-_Prologue_09.png" id="12_wybw5"]
+[ext_resource type="AudioStream" uid="uid://go5pb3e6oa6" path="res://Autoloads/musics/TTT_MUSIC & SFX/TTT_SFX/TTT_SFX_GUNSHOT.wav" id="13_mf8ak"]
+[ext_resource type="AudioStream" uid="uid://bbrdgoy00rk7g" path="res://Autoloads/musics/TTT_MUSIC & SFX/TTT_MUSIC/TTT_MUS_INTRODUCTION.wav" id="14_bm20b"]
 
 [sub_resource type="Animation" id="Animation_pnd44"]
 resource_name = "0"
@@ -273,6 +274,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GunShot/GunShotSound:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_76dcs"]
 resource_name = "8"
@@ -500,6 +513,18 @@ tracks/13/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("GunShot/GunShotSound:playing")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p7qn2"]
 _data = {
@@ -620,8 +645,11 @@ modulate = Color(1, 1, 1, 0)
 offset_right = 1152.0
 offset_bottom = 648.0
 
+[node name="GunShotSound" type="AudioStreamPlayer2D" parent="GunShot"]
+stream = ExtResource("13_mf8ak")
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_08gnx")
+stream = ExtResource("14_bm20b")
 autoplay = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

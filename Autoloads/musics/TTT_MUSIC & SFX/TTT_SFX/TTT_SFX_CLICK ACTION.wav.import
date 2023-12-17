@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bnksgiec1xupw"
+path="res://.godot/imported/TTT_SFX_CLICK ACTION.wav-8b03095365d29b415014b06c97cc5b9c.sample"
+
+[deps]
+
+source_file="res://Autoloads/musics/TTT_MUSIC & SFX/TTT_SFX/TTT_SFX_CLICK ACTION.wav"
+dest_files=["res://.godot/imported/TTT_SFX_CLICK ACTION.wav-8b03095365d29b415014b06c97cc5b9c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

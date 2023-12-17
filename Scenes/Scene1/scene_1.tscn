@@ -71,6 +71,7 @@ polygon = PackedVector2Array(-111, -24, 116, -24, 114, 24, -110, 26)
 text = "Open Drawer"
 
 [node name="ActionD" parent="." instance=ExtResource("5_qytvm")]
+visible = false
 position = Vector2(846, 261)
 action_id = "D"
 action_description = "Spy on Elonai’s and Everett’s conversation"

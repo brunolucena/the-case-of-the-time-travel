@@ -2,5 +2,5 @@ narrator: Spy on Elonai’s and Everett’s conversation?
 - No
 	[signal arg="no"]
 - Yes
-	[sound path="res://Autoloads/musics/Click-Action_v1.mp3" volume="0.0"]
+	[sound path="res://Autoloads/musics/TTT_MUSIC & SFX/TTT_SFX/TTT_SFX_CLICK ACTION.wav" volume="0.0"]
 	[signal arg="yes"]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://4iu7bx0alioq"
+path="res://.godot/imported/TTT_MUS_CRIME SCENE PRESENT.wav-14d4752f91d2c2e774f88837e6e5b86a.sample"
+
+[deps]
+
+source_file="res://Autoloads/musics/TTT_MUSIC & SFX/TTT_MUSIC/TTT_MUS_CRIME SCENE PRESENT.wav"
+dest_files=["res://.godot/imported/TTT_MUS_CRIME SCENE PRESENT.wav-14d4752f91d2c2e774f88837e6e5b86a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
